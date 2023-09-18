@@ -21,12 +21,6 @@ public class ItemController {
     @Autowired
     private ItemRepository itemRepository;
 
-//    Constructor Injection
-//    @Autowired
-//    public ItemController(ItemService itemService) {
-//        ItemService = itemService;
-//    }
-
     @PostMapping("/create")
     ResponseEntity<Item> addItem(@RequestBody ItemRequest itemRequest) {
         Item item = itemService.createItem(itemRequest.getName(), itemRequest.getPrice());
